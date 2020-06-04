@@ -1,0 +1,133 @@
+<!-- 主页 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/leaflet.css" />
+		<link rel="stylesheet" type="text/css" href="css/raisedust.css" />
+	</head>
+	<body>
+		<div id="whole" class="main">
+			<div class="main-both">
+				<!-- 在建施工情况 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">在建施工情况</div>
+						<div class="times">2020-05</div>
+					</div>
+					<div class="content">
+						<div id="construChart"></div>
+					</div>
+				</div>
+				<!-- 工地巡查完成情况 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">工地巡查完成情况</div>
+						<div class="times">2020-05</div>
+					</div>
+					<div class="content">
+						<div id="completeChart"></div>
+					</div>
+				</div>
+				<!-- 全市工地巡查情况 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">全市工地巡查情况</div>
+						<div class="times">2020-05-29至2020-05-30</div>
+					</div>
+					<div class="content">
+						<div id="worksiteChart"></div>
+					</div>
+				</div>
+			</div>
+			<div class="main-center">
+				<div class="block">
+					<div class="title">
+						<div class="texts">扬尘监管一张图</div>
+					</div>
+					<div class="content">
+						<div class="trees">
+							<div class="list" v-for="item in treesList" >
+								<input type="checkbox"  :id="item.name"  :value='item.name' v-model="SelectData">
+								<img :src="item.img" alt="">
+								{{item.name}}
+							</div>
+						</div>
+                      <div id="maps"></div>
+					</div>
+				</div>
+			</div>
+			<!-- 在线监控情况 -->
+			<div class="main-both">
+				<div class="block">
+					<div class="title">
+						<div class="texts">在线监控情况</div>
+					</div>
+					<div class="content">
+						<div id="monitorChart"></div>
+						<div class="monitor">
+							<div class="chunk">
+								<img src="images/buhege.png">
+								<div class="">
+									<span>喷雾降尘作业车辆</span>
+									<span>21台</span>
+								</div>
+							</div>
+							<div class="chunk">
+								<img src="images/buhege.png">
+								<div class="">
+									<span>晒水车</span>
+									<span>144辆</span>
+								</div>
+							</div>
+							<div class="chunk">
+								<img src="images/buhege.png">
+								<div class="">
+									<span>建筑废弃物运输车辆</span>
+									<span>1705台</span>
+								</div>
+							</div>
+							<div class="bottom">
+								接入车辆
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 在线监测报警情况 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">在线监测报警情况</div>
+						<div class="times">2020-05-29</div>
+					</div>
+					<div class="content">
+						<div class="detail">
+							<div>一周内产生报警次数 <span>4190</span> 次</div>
+							<div>涉及工地 <span>126</span> 个</div>
+						</div>
+						<div id="onlineChart"></div>
+					</div>
+				</div>
+				<!-- 各区在线监测联网率 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">各区在线监测联网率</div>
+					</div>
+					<div class="content">
+						<div id="networkChart"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/gz.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/leaflet.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/leaflet.ChineseTmsProviders.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/raisedust.js" type="text/javascript" charset="utf-8"></script>
+</html>

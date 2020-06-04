@@ -1,0 +1,328 @@
+#monitorChart,
+#protecChart,#maps {
+	width: 100%;
+	height: 100%;
+}
+
+.timesLeft {
+	position: absolute;
+	left: 0.75rem;
+}
+
+.quotaTheads,
+.realtimeTheads {
+	width: 100%;
+	height: 1.7rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.quotaTheads div,
+.realtimeTheads div {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.7rem;
+	color: #BBE7FF;
+	font-weight: bold;
+	font-family: "microsoft yahei";
+	border: 1px solid #013BC8;
+	border-right: none;
+}
+
+.quotaTheads div:last-child,
+.realtimeTheads div:last-child {
+	border-right: 1px solid #013BC8;
+}
+
+.quotaTbodys,
+.realtimeTbodys {
+	width: 100%;
+	height: calc(100% - 1.7rem);
+	overflow: auto;
+}
+
+.quotaTbodys ul,
+.realtimeTbodys ul {
+	width: 100%;
+}
+
+.quotaTbodys ul li,
+.realtimeTbodys ul li {
+	width: 100%;
+	height: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.quotaTbodys ul li div,
+.realtimeTbodys ul li div {
+	height: 100%;
+	font-size: 0.7rem;
+	color: #FFFFFF;
+	font-family: "microsoft yahei";
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #013BC8;
+	border-right: none;
+	border-top: none;
+}
+
+.quotaTbodys ul li div:last-child,
+.realtimeTbodys ul li div:last-child {
+	border-right: 1px solid #013BC8;
+}
+
+/* 列表每一列的宽度 */
+.quotaTheads div:nth-child(1),
+.quotaTbodys ul li div:nth-child(1) {
+	width: 4rem;
+}
+
+.quotaTheads div:nth-child(2),
+.quotaTbodys ul li div:nth-child(2) {
+	width: calc(100% - 19rem);
+}
+
+.quotaTheads div:nth-child(3),
+.quotaTbodys ul li div:nth-child(3) {
+	width: 8.5rem;
+}
+
+.quotaTheads div:nth-child(4),
+.quotaTbodys ul li div:nth-child(4) {
+	width: 6.5rem;
+}
+
+.quotaTbodys ul li div:nth-child(4) {
+	color: #e70000;
+}
+
+/* 实时监控 */
+/* 列表每一列的宽度 */
+.realtimeTheads div:nth-child(1),
+.realtimeTbodys ul li div:nth-child(1) {
+	width: 4rem;
+}
+
+.realtimeTheads div:nth-child(2),
+.realtimeTbodys ul li div:nth-child(2) {
+	width: 4rem;
+}
+
+.realtimeTheads div:nth-child(3),
+.realtimeTbodys ul li div:nth-child(3) {
+	width: 9rem;
+}
+
+.realtimeTheads div:nth-child(4),
+.realtimeTbodys ul li div:nth-child(4) {
+	width: calc(100% - 17rem);
+}
+
+.realtimeTbodys ul li div:nth-child(2) span {
+	display: inline-block;
+	width: 3rem;
+	border-radius: 0.25rem;
+	text-align: center;
+}
+
+.total {
+	height: 2.5rem;
+	width: 100%;
+	display: flex;
+	align-items: baseline;
+	justify-content: space-around;
+}
+
+.total span:nth-child(1) {
+	font-size: 0.85rem;
+	color: #BBE7FF;
+	font-weight: bold;
+}
+
+.total span:nth-child(2) {
+	font-size: 2.9rem;
+	color: #fefefe;
+	font-weight: bold;
+}
+
+.total span:nth-child(2) i {
+	font-weight: normal;
+	font-size: 0.85rem;
+}
+
+.monitor {
+	width: 100%;
+	height: calc(100% - 3rem);
+	margin-top: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.monitor .chunk {
+	position: relative;
+	width: 50%;
+	height: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.monitor .chunk img {
+	height: 2.1rem;
+}
+
+.monitor .chunk div {
+	position: absolute;
+	bottom: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.monitor .chunk div span:nth-child(1) {
+	font-size: 0.7rem;
+	color: #BBE7FF;
+}
+
+.monitor .chunk div span:nth-child(2) {
+	font-size: 0.9rem;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+
+.road {
+	height: 2rem;
+	width: 100%;
+	display: flex;
+	align-items: baseline;
+	justify-content: space-around;
+}
+
+.road span:nth-child(1) {
+	font-size: 0.8rem;
+	color: #BBE7FF;
+	font-weight: bold;
+}
+
+.road span:nth-child(2) {
+	font-size: 1.6rem;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.road span:nth-child(2) i {
+	font-weight: normal;
+	font-size: 0.8rem;
+}
+
+
+.roadBtu {
+	width: 100%;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	text-align: right;
+	border-top: 1px dashed #0133ad;
+	margin-top: 0.25rem;
+	font-size: 0.65rem;
+}
+
+.roadBtu span {
+	color: #BBE7FF;
+	margin-left: 1rem;
+	cursor: pointer;
+}
+
+.roadBtu span.active {
+	color: #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+#roadChart {
+	width: 100%;
+	height: calc(100% - 3.75rem);
+}
+.point-ty{
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	z-index: 999;
+}
+.point-ty .name-t{
+	color: #fff;
+	position: relative;
+	padding-left: .5rem;
+	font-size: .9rem;
+	margin-top: 1rem;
+}
+.point-ty .name-t::before{
+	content: "";
+	width: 2px;
+	height: 1rem;
+	position: absolute;
+	top: 4px;
+	left: 0;
+	background-color: #ff0000;
+}
+.point-ty .p-li{
+	border:1px solid #1890df;
+	padding:.5rem;
+	margin-top: .5rem;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+}
+.p-left{
+	display: flex;
+	flex-direction: column;
+}
+.point-ty .p-li .p-left span:nth-child(1),.point-ty .p-li .p-right span:nth-child(1){
+   color: #1da7ff;
+   font-weight: bold;
+}
+.point-ty .p-li:nth-child(3) .p-left span:nth-child(1),.point-ty .p-li:nth-child(3) .p-right span:nth-child(1){
+	color: #fad028;
+ }
+.point-ty .p-li .p-left span:nth-child(2),.point-ty .p-li .p-right span:nth-child(2){
+	color: #fff;
+	font-size: .6rem;
+}
+#p-right-yy,#p-right-ww,#p-right-y,#p-right-w{
+	width: 3rem;
+	height: 3rem;
+	margin-left: 3rem;
+}
+.legend{
+	position: absolute;
+	right: 1rem;
+	bottom: 1rem;
+	z-index: 999;
+	font-size: .8rem;
+}
+.legend .legd{
+	color: #fff;
+	border: 1px solid #1890df;
+	padding: .5rem;
+	margin-top: .5rem;
+	border-radius: 5px;
+}
+.legend .legd>div{
+	display: flex;
+	margin: 0 5px;
+	align-items: center;
+}
+.legend .legd>div img{
+	margin-right: 5px;
+}
+.legend .legd:nth-child(2)>div img{
+	width: 1rem;
+}

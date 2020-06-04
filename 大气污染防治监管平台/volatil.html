@@ -1,0 +1,137 @@
+<!-- 主页 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/leaflet.css" />
+		<link rel="stylesheet" type="text/css" href="css/volatil.css" />
+	</head>
+	<body>
+		<div id="whole" class="main">
+			<div class="main-both">
+				<!-- VOC排放监管概况 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">VOC排放监管概况</div>
+						<div class="times">2020-05</div>
+					</div>
+					<div class="content survey">
+						<div>
+							VOC监管企业
+						</div>
+						<div>
+							1288<span>家</span>
+						</div>
+						<div>
+							实施末端排放在线监测
+						</div>
+						<div>
+							783<span>家</span>
+						</div>
+						<div>
+							当前在线率
+						</div>
+						<div>
+							65.5<span>%</span>
+						</div>
+					</div>
+				</div>
+				<!-- VOC排放监测动态 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">VOC排放监测动态</div>
+						<div class="times">截止2020-05-28 16:00</div>
+					</div>
+					<div class="content">
+						<div id="dynamicChart"></div>
+					</div>
+				</div>
+				<!-- VOC排放速率超标报警 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">VOC排放速率超标报警</div>
+						<div class="times">截止2020-05-28 16:00</div>
+					</div>
+					<div class="content">
+						<div id="policeChart"></div>
+					</div>
+				</div>
+			</div>
+			<div class="main-center">
+				<div class="block">
+					<div class="title">
+						<div class="texts">挥发性有机物排放一张图</div>
+					</div>
+					<div class="content">
+						<div class="trees">
+							<div class="list" v-for="item in treesList" >
+		                        <img :src="item.img" alt="">
+								{{item.name}}
+							</div>
+						</div>
+                        <div id="maps"></div>
+					</div>
+				</div>
+			</div>
+			<!-- 加油站储油库分布 -->
+			<div class="main-both">
+				<div class="block">
+					<div class="title">
+						<div class="texts">加油站储油库分布</div>
+						<div class="times">2020-05</div>
+					</div>
+					<div class="content">
+						<div id="oilingChart"></div>
+					</div>
+				</div>
+				<!-- 油气回收在线监测 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">油气回收在线监测</div>
+						<div class="times">2020-05-29</div>
+					</div>
+					<div class="content">
+						<div id="associatChart"></div>
+					</div>
+				</div>
+				<!-- 监督检查执行情况 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">监督检查执行情况</div>
+						<div class="times">2020-05</div>
+					</div>
+					<div class="content">
+						<div class="superviseTheads">
+							<div>区域</div>
+							<div>检查单位(家)</div>
+							<div>检查次数(次)</div>
+							<div>已检查(次)</div>
+							<div>不合格(次)</div>
+						</div>
+						<div class="superviseTbodys">
+							<ul>
+								<li v-for="(item,index) in supervise">
+									<div>{{item.name}}</div>
+									<div>{{item.prises}}</div>
+									<div>{{item.stopover}}</div>
+									<div>{{item.inspect}}</div>
+									<div>{{item.unqual}}</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/gz.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/leaflet.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/leaflet.ChineseTmsProviders.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/volatil.js" type="text/javascript" charset="utf-8"></script>
+</html>

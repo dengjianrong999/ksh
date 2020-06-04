@@ -1,0 +1,249 @@
+.quality .content {
+	display: flex;
+	justify-content: space-between;
+}
+
+.quality-left {
+	width: 35%;
+	height: 100%;
+}
+
+.quality-left div:nth-child(1) {
+	width: 5rem;
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 1.15rem;
+	font-weight: bold;
+	font-family: "microsoft yahei";
+	background: #82c91e;
+	border-radius: 0.15rem;
+}
+
+.quality-left div:nth-child(1) span:nth-child(2) {
+	font-size: 0.8rem;
+	font-weight: 100;
+}
+
+.quality-left div:nth-child(2) {
+	width: 100%;
+	font-size: 0.8rem;
+	color: #bbe7ff;
+	padding: 0.5rem 0;
+	border-bottom: 1px dashed #013bc8;
+}
+
+.quality-left div:nth-child(3) {
+	width: 100%;
+	line-height: 1.2rem;
+	font-size: 0.7rem;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-align: justify;
+	padding-top: 0.6rem;
+}
+
+.quality-right {
+	width: -webkit-calc(65% - 0.75rem);
+	width: -moz-calc(65% - 0.75rem);
+	width: calc(65% - 0.75rem);
+	height: 100%;
+	margin-left: 0.75rem;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.quality-right .chunk {
+	width: 50%;
+	height: calc(100% / 3);
+	border: 1px solid #013BC8;
+	border-right: none;
+	border-top: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.8rem;
+	color: #BBE7FF;
+	font-weight: bold;
+}
+
+.quality-right .chunk:nth-child(2n) {
+	border-right: 1px solid #013BC8;
+}
+
+.quality-right .chunk:nth-child(n+1):nth-child(-n+2) {
+	border-top: 1px solid #013BC8;
+}
+
+.quality-right .chunk span {
+	width: 3rem;
+	display: inline-block;
+}
+
+.ensemble {
+	font-size: .8rem;
+	font-weight: bold;
+	font-family: "microsoft yahei";
+	color: #BBE7FF;
+	line-height: 2rem;
+	text-indent: 2.1rem
+}
+
+.ensemble .orange {
+	color: #ff962a;
+}
+
+.ensemble .green {
+	color: #82c91e;
+}
+
+.ensemble .blue {
+	color: #2faeff;
+}
+
+
+.enforceTheads {
+	width: 100%;
+	height: 1.7rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.enforceTheads div {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.7rem;
+	color: #BBE7FF;
+	font-weight: bold;
+	font-family: "microsoft yahei";
+	border: 1px solid #013BC8;
+	border-right: none;
+}
+
+.enforceTheads div:last-child {
+	border-right: 1px solid #013BC8;
+}
+
+.enforceTbodys {
+	width: 100%;
+	height: calc(100% - 1.7rem);
+	overflow: auto;
+}
+
+.enforceTbodys ul {
+	width: 100%;
+}
+
+.enforceTbodys ul li {
+	width: 100%;
+	height: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.enforceTbodys ul li div {
+	height: 100%;
+	font-size: 0.7rem;
+	color: #FFFFFF;
+	font-family: "microsoft yahei";
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #013BC8;
+	border-right: none;
+	border-top: none;
+}
+
+.enforceTbodys ul li div:last-child {
+	border-right: 1px solid #013BC8;
+}
+
+/* 列表每一列的宽度 */
+.enforceTheads div:nth-child(1),
+.enforceTbodys ul li div:nth-child(1) {
+	width: calc(100% - 13rem);
+}
+
+.enforceTheads div:nth-child(2),
+.enforceTbodys ul li div:nth-child(2) {
+	width: 5rem;
+}
+
+.enforceTbodys ul li div:nth-child(2) {
+	font-family: bin;
+}
+
+.enforceTheads div:nth-child(3),
+.enforceTbodys ul li div:nth-child(3) {
+	width: 4rem;
+}
+
+.enforceTheads div:nth-child(4),
+.enforceTbodys ul li div:nth-child(4) {
+	width: 4rem;
+}
+
+.enforceTbodys ul li div:nth-child(3) span {
+	display: block;
+	text-align: center;
+	width: 3rem;
+	height: 1.4rem;
+	line-height: 1.4rem;
+	border-radius: 3px;
+}
+
+.vehicle {
+	width: 100%;
+	height: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.vehicle .lump {
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+}
+
+.vehicle .lump span:nth-child(1) {
+	font-size: 0.9rem;
+	font-weight: bold;
+	font-family: "microsoft yahei";
+	color: #BBE7FF;
+}
+
+.vehicle .lump span:nth-child(2) {
+	font-size: 1.9rem;
+	font-weight: bold;
+	font-family: "microsoft yahei";
+	color: #FFFFFF;
+}
+
+.vehicle .lump span:nth-child(2) i {
+	font-size: 0.7rem;
+	font-family: "microsoft yahei";
+	color: #FFFFFF;
+}
+
+#vehicleChart {
+	width: 100%;
+	height: 50%;
+}
+
+#dustChart,
+#standardChart,#maps {
+	width: 100%;
+	height: 100%;
+}
+.trees{
+	width: 10rem;
+}

@@ -1,0 +1,87 @@
+#construChart,
+#completeChart,
+#worksiteChart,
+#networkChart,#maps {
+	width: 100%;
+	height: 100%;
+}
+
+#monitorChart {
+	width: 55%;
+	height: 100%;
+	float: left;
+}
+
+.monitor {
+	width: 45%;
+	height: 100%;
+	float: left;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.monitor .chunk {
+	position: relative;
+	width: 100%;
+	height: calc((100% - 1.9rem) / 3);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.monitor .chunk img{
+	height: 2.1rem;
+}
+.monitor .chunk div {
+	position: absolute;
+	bottom: 0.7rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.monitor .chunk div span:nth-child(1) {
+	font-size: 0.7rem;
+	color: #BBE7FF;
+}
+.monitor .chunk div span:nth-child(2) {
+	font-size: 0.9rem;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.monitor .bottom {
+	height: 1.9rem;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #BBE7FF;
+}
+
+.detail {
+	width: 100%;
+	height: 3rem;
+	margin-top: -0.75rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-bottom: 1px dashed #0133ad;
+}
+
+.detail div {
+	font-size: 0.8rem;
+	color: #BBE7FF;
+	font-weight: bold;
+	font-family: "microsoft yahei";
+}
+
+.detail div span {
+	font-size: 1.4rem;
+	color: #FFFFFF;
+}
+
+#onlineChart {
+	width: 100%;
+	height: calc(100% - 2.25rem);
+}

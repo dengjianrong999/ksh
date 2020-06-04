@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+	</head>
+	<body>
+		<div id="all">
+			<div class="header">
+				<div class="header-left">
+					<div class="tabs " @click="linkTo(0)" :class="{actives:curIndex == 0}">
+						<img src="images/zhuye.png">
+						<span>主页</span>
+					</div>
+					<div class="tabs"  @click="linkTo(1)" :class="{actives:curIndex == 1}" >
+						<img src="images/jidongche.png">
+						<span>空气质量</span>
+					</div>
+					<div class="tabs"  @click="linkTo(2)" :class="{actives:curIndex == 2}">
+						<img src="images/wuranyuan.png">
+						<span>污染源在线</span>
+					</div>
+					<div class="tabs"  @click="linkTo(3)" :class="{actives:curIndex == 3}">
+						<img src="images/qiti.png">
+						<span>挥发性气体</span>
+					</div>
+				</div>
+				<div class="header-center">
+					大气污染防治监管平台
+				</div>
+				<div class="header-right">
+					<div class="tabs"  @click="linkTo(4)" :class="{actives:curIndex == 4}">
+						<img src="images/yangchen1.png">
+						<span>扬尘治理监管</span>
+					</div>
+					<div class="tabs"  @click="linkTo(5)" :class="{actives:curIndex == 5}">
+						<img src="images/jidongche.png">
+						<span>机动车排放监管</span>
+					</div>
+					<div class="tabs"  @click="linkTo(6)" :class="{actives:curIndex == 6}">
+						<img src="images/zhifa.png">
+						<span>执法监督检查</span>
+					</div>
+				</div>
+			</div>
+			<div class="particulars">
+				<iframe :src="hrefs" name='grafana' width="100%" height="100%"></iframe>
+			</div>
+		</div>
+	</body>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var vmData = {
+			hrefs: 'homepage.html',
+			curIndex:0
+		};
+
+		var vm = new Vue({
+			el: "#all",
+			data: vmData,
+			mounted() {},
+			methods: {
+                linkTo(index){
+					this.curIndex = index;
+					if(index == 0){
+						this.hrefs = 'homepage.html';
+					}else if(index == 1){
+						this.hrefs = 'air.html';
+					}else if(index == 2){
+						this.hrefs = 'pollute.html';
+					}else if(index == 3){
+						this.hrefs = 'volatil.html';
+					}else if(index == 4){
+						this.hrefs = 'raisedust.html';
+					}else if(index == 5){
+						this.hrefs = 'vehicle.html';
+					}else if(index == 6){
+						this.hrefs = 'supervision.html';
+					}
+				}
+			}
+		})
+	</script>
+</html>

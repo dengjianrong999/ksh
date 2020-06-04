@@ -1,0 +1,110 @@
+<!-- 主页 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/supervision.css" />
+		<link rel="stylesheet" type="text/css" href="css/leaflet.css" />
+	</head>
+	<body>
+		<div id="whole" class="main">
+			<div class="main-both">
+				<div class="block quality">
+					<div class="title">
+						<div class="texts">涉气类型投诉统计</div>
+						<div class="times">2020-05-30</div>
+					</div>
+					<div class="content">
+					 <div class="sq-title">
+						<span class="titl">上月受理涉气信访投诉</span>
+						<span class="nums">2345</span><span class="num">件</span>
+					 </div>
+					 <div id="statistics-num"></div>
+					</div>
+				</div>
+				<div class="block">
+					<div class="title">
+						<div class="texts">各区投诉数量统计</div>
+						<div class="times">2020-05</div>
+					</div>
+					<div class="content">
+					<div id="complaint-statistics"></div>
+					</div>
+				</div>
+				<div class="block">
+					<div class="title">
+						<div class="texts">投诉方式统计</div>
+						<div class="times">2020-05-30</div>
+					</div>
+					<div class="content">
+					<div id="statistics-type"></div>
+					</div>
+				</div>
+			</div>
+			<div class="main-center">
+				<div class="block">
+					<div class="title">
+						<div class="texts">执法监管一张图</div>
+					</div>
+					<div class="content">
+	                  <div class="types">
+						  <div :class="{actives:currentIndex == 0}" @click="choice(0)">投诉</div>
+						  <div :class="{actives:currentIndex == 1}"  @click="choice(1)">监管</div>
+					  </div>
+                      <div id="maps"></div>
+					</div>
+				</div>
+			</div>
+			<!-- 完成涉气污染源检查 -->
+			<div class="main-both">
+				<div class="block">
+					<div class="title">
+                        <div class="texts">完成涉气污染源检查</div>
+                        <div class="times">2020-04</div>
+					</div>
+					<div class="content" style="overflow-y: scroll;">
+			
+                    <ul class="sq-check">
+						<li v-for="item in sqList">
+							<span>{{item.name}}</span>
+							<span>{{item.num}}</span>
+						</li>
+					</ul>
+					</div>
+				</div>
+				<!-- 气污染类案件立案处罚 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">气污染类案件立案处罚</div>
+						<div class="times">2020-04</div>
+					</div>
+					<div class="content">
+                      <div id="case-penalty"></div>
+					</div>
+				</div>
+				<!-- 执法检查来源分析 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">执法检查来源分析</div>
+						<div class="times">2020-04</div>
+					</div>
+					<div class="content">
+					<div id="source-analysisy"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/gz.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/leaflet.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/leaflet.ChineseTmsProviders.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/supervision.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

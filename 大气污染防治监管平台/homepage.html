@@ -1,0 +1,178 @@
+<!-- 主页 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/homepage.css" />
+		<link rel="stylesheet" type="text/css" href="css/leaflet.css" />
+	</head>
+	<body>
+		<div id="whole" class="main">
+			<div class="main-both">
+				<div class="block quality">
+					<div class="title">
+						<div class="texts">空气质量实况</div>
+						<div class="times">2020-05-30</div>
+					</div>
+					<div class="content">
+						<div class="quality-left">
+							<div>
+								<span>36</span>
+								<span>优</span>
+							</div>
+							<div>
+								<span>首要污染物：</span>
+								<span>PM10</span>
+							</div>
+							<div>
+								预测2020年4月29日广州市空气质量指数（AQI）为150-180，空气质量轻度至中度污染，首要污染物为SO2。
+							</div>
+						</div>
+						<div class="quality-right">
+							<div class="chunk">
+								<span>PM2.5</span>
+								<span>8ug/m3</span>
+							</div>
+							<div class="chunk">
+								<span>SO2</span>
+								<span>8ug/m3</span>
+							</div>
+							<div class="chunk">
+								<span>PM10</span>
+								<span>8ug/m3</span>
+							</div>
+							<div class="chunk">
+								<span>O3</span>
+								<span>8ug/m3</span>
+							</div>
+							<div class="chunk">
+								<span>NO2</span>
+								<span>8ug/m3</span>
+							</div>
+							<div class="chunk">
+								<span>CO</span>
+								<span>8ug/m3</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="block">
+					<div class="title">
+						<div class="texts">总体情况</div>
+						<div class="times">2020-05-30</div>
+					</div>
+					<div class="content ensemble">
+						目前，全市在用锅炉<font class="orange">1819</font>台，废气在线监测点位<font class="orange">275</font>个，含<font class="orange">22</font>个废气排放口测点、<font
+						 class="orange">19</font>个原气口测点、<font class="orange">17</font>个垃圾焚烧监控点和<font class="orange">17</font>个油烟设备监控点。VOC排放治理企业<font
+						 class="green">1288</font>家，纳入在线监测的<font class="green">783</font>家。全市现有<font class="green">588</font>个加油站、<font
+						 class="green">16</font>个储油库和<font class="green">588</font>油罐车。扬尘源方面，系统已纳入全市搅拌站<font class="blue">186</font>个和在建工地<font
+						 class="blue">2775</font>个。
+					</div>
+				</div>
+				<div class="block">
+					<div class="title">
+						<div class="texts">执法监察情况</div>
+						<div class="times">2020-05-30</div>
+					</div>
+					<div class="content">
+						<div class="enforceTheads">
+							<div>所属区</div>
+							<div>执法企业数</div>
+							<div>出动人数</div>
+							<div>执法次数</div>
+						</div>
+						<div class="enforceTbodys">
+							<ul>
+								<li v-for="(item,index) in enforce">
+									<div>{{item.name}}</div>
+									<div>{{item.prises}}</div>
+									<div>{{item.strength}}</div>
+									<div>{{item.frequency}}</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-center">
+				<div class="block">
+					<div class="title">
+						<div class="texts">全市大气污染监测一张图</div>
+					</div>
+					<div class="content">
+						<div class="trees">
+							<div class="list" v-for="item in treesList" >
+								<input type="checkbox"  :id="item.name"  :value='item.name' v-model="SelectData">
+								<img :src="item.img" alt="">
+								{{item.name}}(<span>{{item.num}}</span>)
+							</div>
+						</div>
+                      <div id="maps"></div>
+					</div>
+				</div>
+			</div>
+			<!-- 机动车排放监管 -->
+			<div class="main-both">
+				<div class="block">
+					<div class="title">
+						<div class="texts">机动车排放监管</div>
+						<div class="times">
+							<select name="" id="">
+								<option value ="2019年">2019年</option>
+								<option value ="2020年">2020年</option>
+							</select>
+						</div>
+					</div>
+					<div class="content">
+						<div class="vehicle">
+							<div class="lump">
+								<span>全市检测站</span>
+								<span>145<i>家</i></span>
+							</div>
+							<div class="lump">
+								<span>本年度检测车辆</span>
+								<span>24<i>万辆</i></span>
+							</div>
+							<div class="lump">
+								<span>在册登记车辆</span>
+								<span>246<i>万辆</i></span>
+							</div>
+						</div>
+						<div id="vehicleChart"></div>
+					</div>
+				</div>
+				<!-- 扬尘监管巡查问题 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">扬尘监管巡查问题</div>
+						<div class="times">2020-04</div>
+					</div>
+					<div class="content">
+						<div id="dustChart"></div>
+					</div>
+				</div>
+				<!-- 优良天数达标情况 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">优良天数达标情况</div>
+					</div>
+					<div class="content">
+						<div id="standardChart"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/gz.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/leaflet.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/leaflet.ChineseTmsProviders.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/homepage.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

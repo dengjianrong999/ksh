@@ -1,0 +1,70 @@
+#maps{
+    width: 100%;
+    height: 100%;
+}
+.sq-title{
+    color:#bbe7ff;
+    text-align: center;
+}
+.sq-title .titl{
+    font-weight: bold;
+}
+.sq-title  .nums{
+    margin-left: 20px;
+    color: #fff;
+}
+.sq-title  .num{
+    color: #fff;
+    font-size: .5rem;
+}
+
+#statistics-num{
+   width: 100%;
+   height: calc(100% - 1rem);
+}
+#complaint-statistics,#statistics-type,#case-penalty,#source-analysisy{
+    width:100%;
+    height: 100%;
+}
+.sq-check{
+    width: 100%;
+
+}
+.sq-check li{
+    border: 1px solid #013bc8;
+    color: #fff;
+    font-size: .7rem;
+    display: flex;
+    padding: 3px;
+    
+}
+.sq-check li span{
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sq-check li span:nth-child(1){
+    color: #bbe7ff;
+    border-right:  1px solid #013bc8;
+}
+.types{
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    z-index: 999;
+    display: flex;
+}
+.types>div{
+    padding: .2rem 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 2rem;
+    margin: .5rem;
+    border: 1px solid  #006bc8;
+}
+.types>.actives{
+    background-color: #063dd6;
+}

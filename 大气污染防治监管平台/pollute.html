@@ -1,0 +1,133 @@
+<!-- 主页 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/leaflet.css" />
+		<link rel="stylesheet" type="text/css" href="css/pollute.css" />
+	</head>
+	<body>
+		<div id="whole" class="main">
+			<div class="main-both">
+				<!-- 在线监测设备联网情况 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">在线监测设备联网情况</div>
+					</div>
+					<div class="content">
+						<div id="networkChart"></div>
+					</div>
+				</div>
+				<div class="block">
+					<div class="title">
+						<div class="texts">企业超标缺数处理</div>
+						<div class="times">2020-05-30至2020-06-01</div>
+					</div>
+					<div class="content">
+						<div id="faultChart"></div>
+					</div>
+				</div>
+				<!-- 锅炉整治情况 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">锅炉整治情况</div>
+						<div class="times">2020-04</div>
+					</div>
+					<div class="content">
+						<div class="boiler">
+							<span>锅炉整治企业数量</span>
+							<span>1519家</span>
+						</div>
+						<div id="boilerChart"></div>
+					</div>
+				</div>
+			</div>
+			<div class="main-center">
+				<div class="block">
+					<div class="title">
+						<div class="texts">污染源废气排放一张图</div>
+					</div>
+					<div class="content">
+						<div class="trees">
+							<div class="list" v-for="item in treesList" >
+								<input type="checkbox"  :id="item.name"  :value='item.name' v-model="SelectData">
+								{{item.name}}
+							</div>
+						</div>
+						<div class="legend">
+							<div>直径:废气排放量(万m³)</div>
+							<div class="legend-m">
+								<div class="num">
+									<span>250</span>
+									<span>0</span>
+								</div>
+								<div id="triangle-topleft"></div>
+							</div>
+							
+						</div>
+                      <div id="maps"></div>
+					</div>
+				</div>
+			</div>
+			<!-- 机动车排放监管 -->
+			<div class="main-both">
+				<div class="block">
+					<div class="title">
+						<div class="texts">污染物排放量统计</div>
+						<div class="threw">
+							<span :class="{'active':sewageIndex==1}" @click='sewage(1)'>SO₂</span>
+							<span :class="{'active':sewageIndex==2}" @click='sewage(2)'>NOx</span>
+						</div>
+					</div>
+					<div class="content">
+						<div id="sewageChart"></div>
+					</div>
+				</div>
+				<!-- 扬尘监管巡查问题 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">区域排放统计</div>
+						<div class="threw">
+							<span :class="{'active':regionIndex==1}" @click='region(1)'>SO₂</span>
+							<span :class="{'active':regionIndex==2}" @click='region(2)'>NOx</span>
+						</div>
+					</div>
+					<div class="content">
+						<div id="regionChart"></div>
+					</div>
+				</div>
+				<!-- 优良天数达标情况 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">废气排放大户</div>
+						<div class="times">2020年3月</div>
+					</div>
+					<div class="content">
+						<div class="wasteTheads">
+							<div>企业名称</div>
+							<div>排放量(万立方米)</div>
+						</div>
+						<div class="wasteTbodys">
+							<ul>
+								<li v-for="(item,index) in wastegas">
+									<div>{{item.name}}</div>
+									<div>{{item.blowoff}}</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/gz.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/leaflet.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/leaflet.ChineseTmsProviders.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/pollute.js" type="text/javascript" charset="utf-8"></script>
+</html>

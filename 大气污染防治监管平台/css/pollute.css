@@ -1,0 +1,141 @@
+.boiler {
+	width: 100%;
+	height: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.boiler span {
+	display: inline-block;
+	text-align: center;
+	border: 1px solid #013BC8;
+	line-height: 2rem;
+	width: 50%;
+	height: 100%;
+	font-size: 1rem;
+	color: #BBE7FF;
+}
+
+.boiler span:last-child {
+	color: #FFFFFF;
+	border-left: none;
+}
+
+#boilerChart {
+	width: 100%;
+	height: calc(100% - 2rem);
+}
+
+#faultChart,
+#sewageChart,
+#regionChart,
+#networkChart,#maps {
+	width: 100%;
+	height: 100%;
+}
+
+
+.wasteTheads {
+	width: 100%;
+	height: 1.7rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.wasteTheads div {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.7rem;
+	color: #BBE7FF;
+	font-weight: bold;
+	font-family: "microsoft yahei";
+	border: 1px solid #013BC8;
+	border-right: none;
+}
+
+.wasteTheads div:last-child {
+	border-right: 1px solid #013BC8;
+}
+
+.wasteTbodys {
+	width: 100%;
+	height: calc(100% - 1.7rem);
+	overflow: auto;
+}
+
+.wasteTbodys ul {
+	width: 100%;
+}
+
+.wasteTbodys ul li {
+	width: 100%;
+	height: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.wasteTbodys ul li div {
+	height: 100%;
+	font-size: 0.7rem;
+	color: #FFFFFF;
+	font-family: "microsoft yahei";
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #013BC8;
+	border-right: none;
+	border-top: none;
+}
+
+.wasteTbodys ul li div:last-child {
+	border-right: 1px solid #013BC8;
+}
+
+/* 列表每一列的宽度 */
+.wasteTheads div:nth-child(1),
+.wasteTbodys ul li div:nth-child(1) {
+	width: calc(100% - 8rem);
+}
+
+.wasteTheads div:nth-child(2),
+.wasteTbodys ul li div:nth-child(2) {
+	width: 8rem;
+}
+.legend{
+	width: 7rem;
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	z-index: 999;
+	font-size: .8rem;
+	color: #fff;
+	border: 1px solid #1790df;
+	border-radius: 5px;
+	padding: .5rem;
+}
+.legend-m{
+	display: flex;
+	justify-content: center;
+	margin-top: 5px;
+}
+.legend-m .num{
+	height: 160px;
+	margin-right: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.legend-m .num span{
+	text-align: right;
+}
+#triangle-topleft {
+	width: 0;
+	height: 0;
+	border-top: 160px solid #fad028;
+	border-right: 50px solid transparent;
+  }

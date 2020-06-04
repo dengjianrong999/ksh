@@ -1,0 +1,97 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+#all {
+	width: 100%;
+	height: 100%;
+	background: #012d56;
+}
+
+.header {
+	height: 4rem;
+	background: url(../images/daohangkuang.png) no-repeat;
+	background-size: 100% 75%;
+	background-position: bottom;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.header-left,
+.header-center,
+.header-right {
+	width: 35%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #FFFFFF;
+	font-family: "microsoft yahei";
+	font-size: 1.85rem;
+}
+
+.header-left,
+.header-right {
+	width: 32.5%;
+	padding-top: 1rem;
+	font-size: 0.8rem;
+	font-family: "microsoft yahei";
+}
+
+.header-left .tabs,
+.header-right .tabs {
+	height: 70%;
+	margin-left: 0.8rem;
+	padding: 0 1rem;
+	background-color: #012d56;
+	transform: skew(41deg);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	border: 1px solid #063ee2;
+}
+
+.header-right .tabs {
+	transform: skew(-41deg);
+}
+
+.header-left .tabs:hover,
+.header-right .tabs:hover,
+.header-left .tabs.actives,
+.header-right .tabs.actives {
+	background-color: #003769;
+}
+
+.header-left .tabs img,
+.header-right .tabs img {
+	width: .8rem;
+	margin-right: 0.25rem;
+}
+
+.header-left .tabs img,
+.header-left .tabs span {
+	transform: skew(-41deg);
+}
+
+.header-right .tabs img,
+.header-right .tabs span {
+	transform: skew(41deg);
+}
+
+.particulars {
+	height: -webkit-calc(100% - 4rem);
+	height: -moz-calc(100% - 4rem);
+	height: calc(100% - 4rem);
+	padding: 0.6rem;
+}
+
+.particulars iframe {
+	width: 100%;
+	height: 100%;
+	outline: none;
+	border: none;
+}

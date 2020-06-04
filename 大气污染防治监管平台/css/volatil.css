@@ -1,0 +1,141 @@
+.survey {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.survey div {
+	height: calc((100% - 5rem) / 2);
+	display: flex;
+	align-items: center;
+	border: 1px solid #013BC8;
+	padding-left: 6%;
+	font-size: 1.05rem;
+	border-top: none;
+}
+
+.survey div:nth-child(odd) {
+	width: 60%;
+	color: #BBE7FF;
+}
+
+.survey div:nth-child(even) {
+	width: 40%;
+	border-left: none;
+}
+
+.survey div:nth-child(n+1):nth-child(-n+2) {
+	height: 5rem;
+	font-size: 1.5rem;
+	border-top: 1px solid #013BC8;
+}
+
+.survey div span {
+	color: #cfd5dc;
+	margin-left: 0.1rem;
+}
+
+.survey div:nth-child(2) {
+	color: #FF962A;
+}
+
+.survey div:nth-child(4) {
+	color: #1da7ff;
+}
+
+.survey div:nth-child(6) {
+	color: #82c91e;
+}
+
+#dynamicChart,
+#policeChart,
+#oilingChart,
+#associatChart,#maps {
+	width: 100%;
+	height: 100%;
+}
+
+.superviseTheads {
+	width: 100%;
+	height: 1.7rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.superviseTheads div {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.7rem;
+	color: #BBE7FF;
+	font-weight: bold;
+	font-family: "microsoft yahei";
+	border: 1px solid #013BC8;
+	border-right: none;
+}
+
+.superviseTheads div:last-child {
+	border-right: 1px solid #013BC8;
+}
+
+.superviseTbodys {
+	width: 100%;
+	height: calc(100% - 1.7rem);
+	overflow: auto;
+}
+
+.superviseTbodys ul {
+	width: 100%;
+}
+
+.superviseTbodys ul li {
+	width: 100%;
+	height: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.superviseTbodys ul li div {
+	height: 100%;
+	font-size: 0.7rem;
+	color: #FFFFFF;
+	font-family: "microsoft yahei";
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #013BC8;
+	border-right: none;
+	border-top: none;
+}
+
+.superviseTbodys ul li div:last-child {
+	border-right: 1px solid #013BC8;
+}
+
+/* 列表每一列的宽度 */
+.superviseTheads div:nth-child(1),
+.superviseTbodys ul li div:nth-child(1) {
+	width: calc(100% - 18rem);
+}
+
+.superviseTheads div:nth-child(2),
+.superviseTbodys ul li div:nth-child(2) {
+	width: 5rem;
+}
+
+.superviseTheads div:nth-child(3),
+.superviseTbodys ul li div:nth-child(3) {
+	width: 5rem;
+}
+
+.superviseTheads div:nth-child(4),
+.superviseTbodys ul li div:nth-child(4) {
+	width: 4rem;
+}
+.superviseTheads div:nth-child(5),
+.superviseTbodys ul li div:nth-child(5) {
+	width: 4rem;
+}

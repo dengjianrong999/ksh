@@ -1,0 +1,230 @@
+<!-- 主页 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/leaflet.css" />
+		<link rel="stylesheet" type="text/css" href="css/vehicle.css" />
+	</head>
+	<body>
+		<div id="whole" class="main">
+			<div class="main-both">
+				<!-- 监测量统计 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">监测量统计</div>
+						<div class="times">2020-05-08</div>
+					</div>
+					<div class="content">
+						<div class="total">
+							<span>今日检测总量</span>
+							<span>24620 <i>辆</i></span>
+						</div>
+						<div class="monitor">
+							<div class="chunk">
+								<img src="images/hege.png">
+								<div>
+									<span>合格数</span>
+									<span>20092辆</span>
+								</div>
+							</div>
+							<div class="chunk">
+								<img src="images/buhege.png">
+								<div>
+									<span>不合格数</span>
+									<span>4528辆</span>
+								</div>
+							</div>
+							<div class="chunk">
+								<img src="images/buhege.png">
+								<div>
+									<span>合格率</span>
+									<span>81.6%</span>
+								</div>
+							</div>
+							<div class="chunk">
+								<img src="images/hege.png">
+								<div>
+									<span>不合格率</span>
+									<span>18.4%</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 实时监控 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">实时监控</div>
+						<div class="times">2020-05-08</div>
+					</div>
+					<div class="content">
+						<div class="realtimeTheads">
+							<div>车牌</div>
+							<div>检测结果</div>
+							<div>监测时间</div>
+							<div>监测站点名称</div>
+						</div>
+						<div class="realtimeTbodys">
+							<ul>
+								<li v-for="(item,index) in realtime">
+									<div>{{item.plate}}</div>
+									<div>
+										<span :style="{background:(item.result=='合格'?'#6bcd07':(item.result=='不合格'?'#e70000':''))}">{{item.result}}</span>
+									</div>
+									<div>{{item.times}}</div>
+									<div>{{item.name}}</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- 环保监测不合格燃料占比 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">环保监测不合格燃料占比</div>
+						<div class="times">2020-05</div>
+					</div>
+					<div class="content">
+						<div id="protecChart"></div>
+					</div>
+				</div>
+			</div>
+			<div class="main-center">
+				<div class="block">
+					<div class="title">
+						<div class="texts">检测站开检情况一张图</div>
+					</div>
+					<div class="content">
+					  <div class="point-ty">
+						  <div class="jc-point">
+							  <div class="name-t">
+								  检测站开检情况
+							  </div>
+							  <div class="p-li">
+								  <div class="p-left">
+									  <span>8000</span>
+									  <span>已开检</span>
+								  </div>
+								  <div id="p-right-y"></div>
+							  </div>
+							  <div class="p-li">
+								<div class="p-left">
+									<span>2000</span>
+									<span>未开检</span>
+								</div>
+								<div id="p-right-w"></div>
+							  </div>
+						  </div>
+						  <div class="yc-point">
+							<div class="name-t">
+								遥测站开检情况
+							</div>
+							<div class="p-li">
+								<div class="p-left">
+									<span>8000</span>
+									<span>已开检</span>
+								</div>
+								<div id="p-right-yy"></div>
+							</div>
+							<div class="p-li">
+							  <div class="p-left">
+								  <span>2000</span>
+								  <span>未开检</span>
+							  </div>
+							  <div id="p-right-ww"></div>
+							</div>
+						  </div>
+					  </div>
+					  <div class="legend">
+						  <div class="legd">
+							  <div><img src="./images/jiancezhan.png" alt=""> 检查站</div>
+							  <div><img src="./images/chuizhishi.png" alt=""> 垂直式</div>
+							  <div><img src="./images/tushi_shui.png" alt=""> 水平式</div>
+							  <div><img src="./images/tushi_yidong.png" alt=""> 移动式</div>
+							  <div><img src="./images/tushi_hei.png" alt=""> 黑烟车</div>
+						  </div>
+						  <div class="legd">
+							<div><img src="./images/tushituo-zhengchang.png" alt=""> 正常</div>
+							<div><img src="./images/tushituo-weikai.png" alt=""> 未开</div>
+							<div><img src="./images/tushituo-tingyong.png" alt=""> 停用</div>
+					      </div>
+					  </div>
+                     <div id="maps"></div>
+					</div>
+				</div>
+			</div>
+			<!-- 监测总量排名 -->
+			<div class="main-both">
+				<div class="block">
+					<div class="title">
+						<div class="timesLeft">
+							2020-05
+						</div>
+						<div class="texts">监测总量排名</div>
+						<div class="threw">
+							<span :class="{'active':monitorIndex==1}" @click="monitor(1)">环检</span>
+							<span :class="{'active':monitorIndex==2}" @click="monitor(2)">遥测</span>
+						</div>
+					</div>
+					<div class="content">
+						<div id="monitorChart"></div>
+					</div>
+				</div>
+				<!-- 超标监测信息 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">超标监测信息</div>
+						<div class="times">2020-05-29</div>
+					</div>
+					<div class="content">
+						<div class="quotaTheads">
+							<div>车牌</div>
+							<div>点位名称</div>
+							<div>监测时间</div>
+							<div>超标项</div>
+						</div>
+						<div class="quotaTbodys">
+							<ul>
+								<li v-for="(item,index) in quota">
+									<div>{{item.plate}}</div>
+									<div>{{item.name}}</div>
+									<div>{{item.times}}</div>
+									<div>{{item.term}}</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- 非道路移动机械备案情况 -->
+				<div class="block">
+					<div class="title">
+						<div class="texts">非道路移动机械备案情况</div>
+						<div class="times">2020-05-29</div>
+					</div>
+					<div class="content">
+						<div class="road">
+							<span>全市完成登记的非道路移动机械</span>
+							<span>1757 <i>台</i></span>
+						</div>
+						<div class="roadBtu">
+							<span :class="{'active':roadIndex==1}" @click='roadBtu(1)'>按排放阶段</span>
+							<span :class="{'active':roadIndex==2}" @click='roadBtu(2)'>按使用性质</span>
+						</div>
+						<div id="roadChart"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/gz.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/leaflet.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/leaflet.ChineseTmsProviders.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vehicle.js" type="text/javascript" charset="utf-8"></script>
+</html>

@@ -1,0 +1,141 @@
+<!-- 主页 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/air.css">
+		<link rel="stylesheet" type="text/css" href="css/leaflet.css" />
+		<link rel="stylesheet" type="text/css" href="css/aqi.css" />
+	</head>
+	<body>
+		<div id="whole" class="main">
+			<div class="main-both">
+				<div class="block">
+					<div class="title">
+						<div class="texts">首要污染物占比</div>
+						<div class="times">2020-05</div>
+					</div>
+					<div class="content">
+                     <div id="primary-pollutant"></div>
+					</div>
+				</div>
+				<div class="block">
+					<div class="title">
+						<div class="texts">每月空气质量等级</div>
+						<div class="times">2020年</div>
+					</div>
+					<div class="content">
+                        <div id="air-level"></div>
+					</div>
+				</div>
+				<div class="block">
+					<div class="title">
+						<div class="texts">PN2.5达标情况</div>
+						<div class="times">2020-05</div>
+					</div>
+					<div class="content">
+                        <div id="pm-standard"></div>
+					</div>
+				</div>
+			</div>
+			<div class="main-center">
+				<div class="block">
+					<div class="title">
+						<div class="texts">实时空气质量一张图</div>
+					</div>
+					<div class="content">
+						<div class="tabsmap">
+							<div :class="{activeT:areaIndex==0}"  @click="changeMapType(0)">点位</div>
+							<div :class="{activeT:areaIndex==1}" @click="changeMapType(1)">区域</div>
+						</div>
+						<div class="rank">
+							<div >
+								<img src="./images/guokong.png" alt=""> 国控
+							</div>
+							<div>
+								<img src="./images/jungong.png" alt=""> 市控
+							</div>
+						</div>
+						<div class="tip-box">
+							<ul class="text">
+								<li>优</li>
+								<li>良</li>
+								<li>轻度</li>
+								<li>中度</li>
+								<li>重度</li>
+								<li>严重</li>
+							</ul>
+							<ul class="tip"><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+						
+						</div>
+						<div class="air-type">
+							<ul class="airs">
+								<li :class="{active:airIndex == 0}" @click="changeAir(0)">AQI</li>
+								<li :class="{active:airIndex == 1}" @click="changeAir(1)">PM2.5</li>
+								<li :class="{active:airIndex == 2}" @click="changeAir(2)">PM10</li>
+								<li :class="{active:airIndex == 3}" @click="changeAir(3)">SO₂</li>
+								<li :class="{active:airIndex == 4}" @click="changeAir(4)">NO₂</li>
+								<li :class="{active:airIndex == 5}" @click="changeAir(5)">CO</li>
+								<li :class="{active:airIndex == 6}" @click="changeAir(6)">O₂_8h</li>
+							</ul>
+						</div>
+						<div id="maps"></div>
+					</div>
+				</div>
+			</div>
+			<div class="main-both">
+				<div class="block">
+					<div class="title">
+						<div class="texts">全市空气站排名(前10)</div>
+						<div class="times">2020-05-30</div>
+					</div>
+					<div class="content">
+                      <div id="airRanking"></div>
+					</div>
+				</div>
+				<div class="block">
+					<div class="title">
+						<div class="texts">空气质量日历图</div>
+						<div class="times">2020-05-30</div>
+					</div>
+					<div class="content">
+						<div class="tip-box tips">
+							<ul class="text">
+								<li>优</li>
+								<li>良</li>
+								<li>轻度</li>
+								<li>中度</li>
+								<li>重度</li>
+								<li>严重</li>
+							</ul>
+							<ul class="tip"><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+						
+						</div>
+						<div id='schedule-box' class="aqi-content boxshaw" ></div>
+					</div>
+				</div>
+				<div class="block">
+					<div class="title">
+						<div class="texts">空气质量历史变化</div>
+						<div class="times">2020-05-30</div>
+					</div>
+					<div class="content">
+						<div id="airChange"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/gz.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/leaflet.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/leaflet.ChineseTmsProviders.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="js/aqiCalendar.js"></script>
+	<script src="js/air.js" type="text/javascript" charset="utf-8"></script>
+</html>
