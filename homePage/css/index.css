@@ -1,0 +1,323 @@
+html ,body ,.env-protection{
+    width: 100%;
+    height: 100%;
+    background: url('../images/bg.png');
+}
+
+.title{
+    width: 100%;
+    height: 10%;
+    background: url('../images/header_1920.png');
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.top-left{
+    width: 30%;
+    height: 80%;
+    margin-left: 20px;
+    background: url('../images/logo.png');
+    background-size: 100% 100%;
+}
+.top-right{
+    height: 80%;
+    padding-right: 20px;
+    color:#0590cf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.top-right img{
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.nav-menu{
+    width: 100%;
+    background-color: #389fdd;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.nav-menu a{
+	cursor: pointer;
+	text-decoration:none;
+}
+
+.nav-menu a:visited{
+	cursor: pointer;
+	color:#000;
+	text-decoration:none!important;
+}
+.dropdown>a{
+	font-weight: 600;
+	width:100%;
+	height:100%;
+    padding: 4px 0px;
+    letter-spacing:1px;
+    color: #09376c;
+    font-size: 16px;
+}
+.dropdown>a:hover{
+	color:#FFF;
+}
+.nav-menu>div{
+    height: 100%;
+    color:#06356a;
+    border-left:1px solid #07386F;
+    display: inline;
+    padding: 0px 0.4em;
+}
+.nav-menu .active{
+    color: #FFF!important;
+}
+
+.nav-menu .dropdown ul{
+	background-color:#000000;
+  	opacity: 0.75;
+  	-moz-box-shadow:6px 6px 19px #333333, 2px 2px 5px #333333; 
+  	-webkit-box-shadow:6px 6px 19px #333333, 2px 2px 5px #333333; 
+  	box-shadow:6px 6px 19px #333333, 2px 2px 5px #333333;
+}
+
+.nav-menu .dropdown ul>li>a{
+	color:#FFF;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
+	color:#000!important;
+}
+
+.dropdown-menu > li > a{
+	font-size: 16px;
+	padding: 0.5rem;
+}
+.dropdown-menu > li > a:hover{
+	font-weight: bolder;
+}
+.charts-main{
+	min-width:1024px;
+	min-height:553px;
+    height:-moz-calc(100% - 140px);
+	height:-webkit-calc(100% - 140px);
+	height: calc(100% - 140px);
+    background-color: #d3e3eb;
+    padding: 10px 0px 0px 10px;
+
+}
+.charts-main .row {
+    width: 100%;
+	height:-moz-calc(100%/2);
+	height:-webkit-calc(100%/2);
+	height: calc(100%/2);
+}
+.foot{
+   text-align: center;
+   padding: 5px 0px;
+   background-color: #FFF;
+   border: 1px solid #d3e3eb;
+   margin-top: -32px;
+}
+@media only screen (width:1920px){
+    .foot{
+        margin-top: -75px;
+     }
+}
+.charts-main .row>div{
+    height: 100%;
+    padding: 0px 10px 10px 0px;
+}
+.charts-main .row div .top-title{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding:0px 20px;
+    font-size: 18px;
+    font-weight: 900;
+    background-color: #FFF;
+    color: #0590cf;
+    border-bottom: 1px dashed #0590cf;
+}
+.charts-detail{
+    height:-moz-calc(100% - 40px);
+	height:-webkit-calc(100% - 40px);
+	height: calc(100% - 40px);
+    background-color: #FFF;
+    position: relative;
+}
+
+.charset-top{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+.charset-top .time{
+    text-align:center;
+    color:#333333;
+    font-size: 12px;
+}
+.charset-top .data{
+	text-align:center;
+    /*background-color: #8f4a7b;*/
+    color:#333333;
+    font-size: 14px;
+}
+.charset-top .data span{
+	text-align:center;
+    font-weight:bold;
+    color:#6cbf89;
+    font-size: 16px;
+}
+
+
+.charset-left{
+    position: absolute;
+    right: 0%;
+    top: 5%;
+    font-size: 1em;
+}
+.charset-left div{
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+.charset-left div:nth-child(1){
+    color: #333;
+}
+.charset-left div span{
+    color: #0590cf;
+    font-weight: 700;
+}
+.charts-detail .charts-detail-top,.charts-detail .charts-detail-bot{
+   width: 100%;
+   height: 50%;
+}
+.charts-detail .charts-detail-top>div, .charts-detail .charts-detail-bot>div{
+    width: 33.3%;
+    height: 100%;
+    display: inline-block;
+}
+.charts-detail .row ,.charts-detail .row div{
+    height: 100%;
+    border: none;
+}
+
+.charts-detail table{
+    width: 100%;  
+    border-collapse:0;	
+    border-spacing :0;
+    border:  1px solid #d9e5f6;
+}
+.charts-detail table tr td{
+    text-align: center;
+    vertical-align:middle;
+    border: 1px solid #d9e5f6;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px;
+
+}
+
+.aqi-left { 
+	float: left; width: 82px; 
+} 
+.aqi-content { 
+	 margin-left: 82px;
+	 padding: 10px;
+}
+
+#img2{
+    width: 82px;
+    height: 100%;
+    background: url('../images/AQI-bz.png') no-repeat;
+    background-origin: content-box;
+    background-size:62px 100%;
+    padding: 10px;
+}
+#img3{
+    width: 100%;
+    height: 100%;
+    background: url('../images/信访统计.png') no-repeat;
+    background-origin: content-box;
+    background-size:100% 100%;
+    padding: 20px;
+}
+#img4{
+    width: 100%;
+    height: 100%;
+    background: url('../images/污染源企业.png') no-repeat;
+    background-origin: content-box;
+    background-size:100% 100%;
+    padding: 50px;
+}
+#img5{
+    width: 100%;
+    height: 100%;
+    background: url('../images/污染源企业分布.png') no-repeat;
+    background-origin: content-box;
+    background-size:100% 100%;
+    padding: 20px;
+}
+#img6{
+    width: 100%;
+    height: 100%;
+    background: url('../images/通知公告.png') no-repeat;
+    background-origin: content-box;
+    background-size:100% 100%;
+    padding: 20px;
+}
+
+<!-- 通知公告 -->
+.latest-news-title {
+    height:-moz-calc(100% - 40px);
+	height:-webkit-calc(100% - 40px);
+	height: calc(100% - 40px);
+    padding: 5px;
+    overflow-y:auto;
+}
+
+.latest-news-list ul {
+    list-style-type: square;
+    padding: 0 0 0 30px;
+}
+
+.latest-news-list ul li {
+    text-align: left;
+    padding: 3px 6px;
+    font-size:14px;
+}
+
+.latest-news-list ul li a{
+    display: inline-block;
+    width:-moz-calc(100% - 100px);
+	width:-webkit-calc(100% - 100px);
+	width: calc(100% - 100px);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.latest-news-list ul li span {
+    display: inline-block;
+    vertical-align: middle;
+	width: 100px;
+    text-align: right;
+    color: #f7941c;
+    float: right;
+}
+
+.user-info{
+	color: black;
+	margin-right: 14px;
+	display: flex;
+	justify-content:center;
+	align-items:Center;
+}
+
+.user-info img{
+	margin-right: 4px;
+}

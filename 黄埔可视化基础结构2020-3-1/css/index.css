@@ -1,0 +1,205 @@
+@media(min-width:3000px){
+    html{
+        font-size: 32px;
+    
+    }
+}
+@media(max-width:3000px){
+    html{
+        font-size: 24px;
+    
+    }
+}
+@media(max-width:2048px){
+    html{
+        font-size: 18px;
+    
+    }
+}
+@media(max-width:1920px){
+    html{
+        font-size: 16px;
+    
+    }
+}
+@media(max-width:1601px){
+    html{
+        font-size: 15px;
+    
+    }
+}
+@media(max-width:1366px){
+    html{
+        font-size: 14px;
+    }
+}
+
+html, body,#MainContent{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(7, 6, 40);
+    overflow: hidden;
+}
+.header{
+    display: -webkit-box;
+    display: flex;
+    height: 4rem;
+}
+.header .topTitle{
+    height: 100%;
+    background: url(../images/bgTop.png)  no-repeat;
+    background-size: 100% 100%;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.header ul, .header .topTitle,.header .sysT{
+    width: 33.3%;
+    padding:  0 10px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+                    align-items: center;
+}
+.header .sysT{
+    -webkit-box-pack: flex-end;
+            justify-content: flex-end;
+}
+.header ul li, .header .sysT span{
+    cursor: pointer;
+    text-align: center;
+    width: 9rem;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    background: url(../images/2@2x.png) no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+    font-size: .8rem;
+}
+.header ul li a, .header .sysT span a{
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+            justify-content: center;
+}
+.header .sysT span{
+    width: 7rem;
+}
+.header ul li:hover,.header ul .activeli, .header .sysT span:hover{
+    background: url(../images/4@2x.png) no-repeat;
+    background-size: 100% 100%;
+
+}
+.header ul li img{
+    width: .8rem;
+    margin-right: 5px;
+}
+.header .sysT img{
+    margin-left: 5px;
+}
+
+.content {
+    height: calc(100% - 4rem);
+    display: -webkit-box;
+    display: flex;
+}
+
+.content .leftcontent, .content .rightcontent{
+    width: 25%;
+    height: 100%;
+    padding: 10px;
+}
+.content .leftcontent>div, .content .rightcontent>div{
+    padding: .5rem;
+    color: #fff;
+}
+.content .leftcontent .title .content .rightcontent .title{
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+.cotentfor, #problChart{
+    width: 100%;
+    height: calc(100% - 1.5rem);
+}
+
+.content .leftcontent .partHeight1, .content .rightcontent .partHeight1{
+    width: 100%;
+    height: calc(33.3% - 7px);
+    border-radius: 8px;
+    background: url(../images/biankuang.png);
+    background-size: 100% 100%;
+    margin-bottom: 10px;
+}
+
+.content .leftcontent .partHeight3, .content .rightcontent .partHeight3{
+    width: calc(100% - 0px);
+    height: calc(100% - 0px);
+    background: url(../images/zuo@2x.png);
+    background-size: 100% 100%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+.content .centercontent{
+    width: 50%;
+    height: 100%;
+    padding: 10px 0;
+}
+.content .centercontent #maps{
+    width: 100%;
+    height: 66.6%;
+}
+.content .centercontent .centerBot{
+    width: 100%;
+    margin-top: 7px;
+    height: calc(33.3% - 8px);
+    display: -webkit-box;
+    display: flex;
+}
+.content .centercontent .centerBot1{
+    width: 100%;
+    height: calc(33.3% - 10px);
+    margin-top: 8px;
+    display: -webkit-box;
+    display: flex;
+}
+.content .centercontent .centerBot1 .partWidth1{
+    width: 50%;
+    height: 100%;
+    background: url(../images/biankuang.png);
+    background-size: 100% 100%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+.content .centercontent .centerBot1 .partWidth1:nth-child(1){
+    margin-right: 5px;
+}
+.content .centercontent .centerBot1 .partWidth1:nth-child(2){
+    margin-left: 5px;
+}
+
+.content .centercontent .centerBot .partWidth2{
+    width: 100%;
+    background: url(../images/zhong@2x.png);
+    background-size: 100% 100%;
+}
+
+.content .centercontent .centerGf {
+    width: calc(75% - 10px);
+    height: calc((100% - 4rem - 30px) / 3);
+    position: absolute;
+}
+.content .centercontent .centerGf .partWidth3{
+    width: 100%;
+    height: calc(100% - 4px);
+    background: url(../images/zhong@2x.png);
+    background-size: 100% 100%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .tab {
+            position: relative;
+        }
+
+        .tab img {
+            position: absolute;
+            left: 20px;
+            top: 168px;
+            z-index: 999;
+        }
+
+        .tables {
+            width: 402px;
+            max-height: 150px;
+            box-shadow: 0px 0px 1px 1px #4bc5f2;
+            background-color: rgba(242, 242, 242, 0.88);
+            background-size: 100% 100%;
+            border-radius: 5px;
+            overflow-y: scroll;
+            padding: 10px;
+            position: relative;
+        }
+
+        .tables .dw {
+            font-size: 12px;
+            color: #666;
+            padding-left: 7px;
+        }
+
+
+
+        .tables table thead {
+            font-size: 14px;
+            font-weight: 700;
+            border-bottom: 1px solid #4bc5f2;
+        }
+
+        .tables table tr td {
+            text-align: center;
+            padding: 5px;
+            font-size: 12px;
+            color: #333;
+            padding: 3px 5px;
+            vertical-align: middle;
+
+        }
+
+        .tables table tbody {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .tables table tbody tr td:nth-child(1) {
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* 滚动条 */
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #018EE8;
+            outline-offset: -2px;
+            outline: 2px solid #fff;
+            -webkit-border-radius: 4px;
+            border: 2px solid #fff;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track-piece {
+            background-color: #fff;
+            -webkit-border-radius: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="tab">
+        <img src="./images/sanjiaoxing.png" alt="">
+        <div class="tables">
+            <table>
+                <thead>
+                    <tr>
+                        <td>时间</td>
+                        <td>AQI</td>
+                        <td>首要污染物</td>
+                        <td>PM2.5</td>
+                        <td>SO2</td>
+                        <td>NO2</td>
+                        <td>O3</td>
+                        <td>CO</td>
+                        <td>PM10</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>50</td>
+                        <td>PM2.5</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>80</td>
+                        <td>PM2.5</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>39</td>
+                        <td>PM2.5</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>60</td>
+                        <td>PM2.5</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>30</td>
+                        <td>PM2.5</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

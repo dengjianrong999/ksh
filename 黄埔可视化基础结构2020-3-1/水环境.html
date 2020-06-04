@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link href="leaflet/leaflet.css" type="text/css" rel="stylesheet" />
+  <body>
+    <div id="MainContent">
+      <div class="header">
+        <ul>
+          <li class="">
+            <a href="./污染源监管一张图.html">
+              <img src="./images/11@2x.png" alt="">
+              污染源监管
+            </a>
+          </li>
+          <li class="activeli">
+            <a href="./水环境.html"> <img src="./images/22@2x.png" alt="">水体环境</a>
+          </li>
+          <li class="">
+            <a href="./固体废物.html"> <img src="./images/33@2x.png" alt="">固体废物</a>
+          </li>
+          <li class="">
+            <a href="./土壤环境.html"> <img src="./images/44@2x.png" alt="">土壤环境</a>
+          </li>
+        </ul>
+        <div class="topTitle">水环境一张图</div>
+        <div class="sysT">
+          <span>返回主页<img src="./images/back.png" alt=""></span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="leftcontent">
+          <div class="partHeight1">
+              <div class="title">
+                  标题 标题 标题 标题
+              </div>
+              <div  class="cotentfor" id="problChart">
+          
+              </div>
+          </div>
+          <div class="partHeight1"></div>
+          <div class="partHeight1"></div>
+        </div>
+        <div class="centercontent">
+          <div id="maps"></div>
+          <div class="centerBot">
+            <div class="partWidth1 partWidth2"></div>
+          </div>
+        </div>
+        <div class="rightcontent">
+          <div class="partHeight1"></div>
+          <div class="partHeight1"></div>
+          <div class="partHeight1"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./js/jq.3.31.js"></script>
+  <script src="./js/huangpu.js"></script>
+  <script src="leaflet/leaflet.js"></script>
+  <script src="leaflet/leaflet.ChineseTmsProviders.js"></script>
+  <script src="./js/vue.min.js"></script>
+  <script src="./js/vue.min.js"></script>
+  <script src="./js/fontSize.js"></script>
+  <script src="./js/echarts.min.js"></script>
+  <script>
+    // echarts  字体自适应
+    new Vue({
+      el: "#MainContent",
+      data() {
+        return {
+          map: null
+        };
+      },
+      mounted() {
+        this.initMap();
+        this.problChart();
+        console.log(this.remSize(.8),'sss')   //字体大小
+      },
+      methods: {
+        problChart() {
+					var myChart = echarts.init(document.getElementById('problChart'));
+					var data = [{
+						value: 335,
+						name: '环保管理手续不全',
+					}, {
+						value: 310,
+						name: '涉嫌监测数据造假'
+					}, {
+						value: 234,
+						name: '涉嫌环保违法排污'
+					}, {
+						value: 135,
+						name: '检查执法情况分析'
+					}, {
+						value: 1548,
+						name: '信访投诉热点分析'
+					}]
+					var seriesData = [];
+					var legendData = [];
+					var arr = data
+					var s = 0;
+					for (var i = arr.length - 1; i >= 0; i--) {
+						s += arr[i].value;
+					}
+					for (var i = 0; i < data.length; i++) {
+						var c = {
+							value: data[i].value,
+							name: data[i].name + ' ' + (data[i].value / s * 100).toFixed(2) + '%'
+						}
+						seriesData[i] = c
+						legendData[i] = data[i].name + ' ' + (data[i].value / s * 100).toFixed(2) + '%';
+					}
+					option = {
+						title: {
+							text: '问题分\n类占比',
+							x: '23%',
+							y: 'center',
+							textStyle: {
+                fontWeight: 'normal',
+                color: '#fff',
+								fontSize: this.remSize(0.8)
+							}
+						},
+						color: ["#027ff2", "#f18d00", "#b960ed", "#ffd800", "#5bdb7f"],
+						tooltip: {
+							trigger: 'item',
+							formatter: function(p) {
+								var tutor_name = p.name;
+								var reg = /[\u4e00-\u9fa5]/g;
+								var names = tutor_name.match(reg);
+								return names.join("") + ':' + p.value + '(' + (p.value / s * 100).toFixed(2) + '%' + ')'
+							}
+						},
+						legend: {
+							orient: 'vertical',
+							right: this.remSize(0.7),
+							data: legendData,
+							textStyle: {
+								color: '#fff',
+								fontSize: this.remSize(0.7),
+							},
+						},
+						series: [{
+							name: '问题分类占比统计',
+							type: 'pie',
+							radius: ['55%', '80%'],
+							center: ['30%', '50%'],
+							label: {
+								show: false
+							},
+							data: seriesData,
+						}]
+					}
+					myChart.setOption(option);
+					window.addEventListener("resize", function() {
+						myChart.resize();
+					});
+				},
+        
+        initMap: function() {
+          var _this = this;
+          //图层
+          var normalm1 = L.tileLayer.chinaProvider("Geoq.Normal.Map", {
+            maxZoom: 18,
+            minZoom: 5
+          });
+          var normalm2 = L.tileLayer.chinaProvider("Geoq.Normal.PurplishBlue", {
+            maxZoom: 18,
+            minZoom: 5
+          });
+          var normalm3 = L.tileLayer.chinaProvider("Geoq.Normal.Gray", {
+            maxZoom: 18,
+            minZoom: 5
+          });
+          var normalm4 = L.tileLayer.chinaProvider("Geoq.Normal.Warm", {
+            maxZoom: 18,
+            minZoom: 5
+          });
+          /**
+           * 天地图内容
+           */
+
+          var normalm = L.tileLayer.chinaProvider("TianDiTu.Normal.Map", {
+              maxZoom: 18,
+              minZoom: 5
+            }),
+            normala = L.tileLayer.chinaProvider("TianDiTu.Normal.Annotion", {
+              maxZoom: 18,
+              minZoom: 5
+            }),
+            imgm = L.tileLayer.chinaProvider("TianDiTu.Satellite.Map", {
+              maxZoom: 18,
+              minZoom: 5
+            }),
+            imga = L.tileLayer.chinaProvider("TianDiTu.Satellite.Annotion", {
+              maxZoom: 18,
+              minZoom: 5
+            });
+
+          var normal = L.layerGroup([normalm, normala]),
+            image = L.layerGroup([imgm, imga]);
+          /**
+           * 谷歌
+           */
+
+          var normalMap = L.tileLayer.chinaProvider("Google.Normal.Map", {
+              maxZoom: 18,
+              minZoom: 5
+            }),
+            satelliteMap = L.tileLayer.chinaProvider("Google.Satellite.Map", {
+              maxZoom: 18,
+              minZoom: 5
+            });
+          /**
+           * 高德地图
+           */
+
+          var Gaode = L.tileLayer.chinaProvider("GaoDe.Normal.Map", {
+            maxZoom: 18,
+            minZoom: 5
+          });
+          var Gaodimgem = L.tileLayer.chinaProvider("GaoDe.Satellite.Map", {
+            maxZoom: 18,
+            minZoom: 5
+          });
+          var Gaodimga = L.tileLayer.chinaProvider("GaoDe.Satellite.Annotion", {
+            maxZoom: 18,
+            minZoom: 5
+          });
+          var Gaodimage = L.layerGroup([Gaodimgem, Gaodimga]);
+          var baseLayers = {
+            智图地图: normalm1,
+            智图午夜蓝: normalm2,
+            智图灰色: normalm3,
+            智图暖色: normalm4,
+            天地图: normal,
+            天地图影像: image,
+            谷歌地图: normalMap,
+            谷歌影像: satelliteMap,
+            高德地图: Gaode,
+            高德影像: Gaodimage
+          };
+          var options = {
+            center: [23.236223, 113.513346],
+            zoom: 12, 
+            layers: [normalm2]
+          };
+          _this.map = L.map("maps", options);
+          _this.map.on('click',function(e){
+            alert(e.latlng.toString())
+            //  alert(e.latlng)
+          })
+          
+          L.control.layers(baseLayers, null).addTo(_this.map);
+          _this.drawPolygon();
+        },
+        drawPolygon: function() {
+          var _this = this;
+          $.each(huangpu_polygon, function(key, val) {
+            var lnglat = val.lnglat;
+            var pointList = [];
+            lnglat.forEach(element => {
+              pointList.push([element.lat - 0.006, element.lng - 0.006]);
+            });
+            var polygon = L.polygon(pointList, {
+              color: "blue", //边界线颜色
+              weight: 0,
+              fillColor: townFillColor[key],
+              fillOpacity: 0.5
+            })
+              .addTo(_this.map)
+              .bindPopup("<div class='name-icon'>" + val.name + "</div>");
+          });
+        }
+      }
+    });
+  </script>
+</html>

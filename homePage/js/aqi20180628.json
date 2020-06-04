@@ -1,0 +1,124 @@
+{
+	"aqi": {
+	    "aqi00": {
+			"aqi": "81",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi01": {
+			"aqi": "81",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi02": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi03": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi04": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi05": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi06": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi07": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi08": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi09": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi10": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi11": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi12": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi13": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi14": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi15": {
+			"aqi": "210",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi16": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi17": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi18": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi19": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi20": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi21": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi22": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		},
+		"aqi23": {
+			"aqi": "100",
+			"primary": "81",
+			"quality ": "优"
+		}
+	}
+}
