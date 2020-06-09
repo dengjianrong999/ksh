@@ -1,0 +1,482 @@
+<title>空气质量日历</title>
+ 
+<style type="text/css">
+    #air-calendar-laydate .layui-laydate-main {
+        width: 100%;
+    }
+ 
+    #air-calendar-laydate .layui-laydate-content td, #test-n1 .layui-laydate-content th {
+        width: 60px;
+        height: 40px;
+    }
+ 
+    #div_left {
+        width: 100%;
+        height: 126px;
+        background-color: #63ea3b;
+        /*padding-top: 100px;*/
+    }
+ 
+    .div_AQI {
+        font-size: 14px;
+        color: white;
+        font-family: 'Microsoft YaHei';
+        line-height: 28px;
+        text-align: center;
+    }
+ 
+    .div_AQIValue {
+        font-size: 34px;
+        color: white;
+        font-family: 'Microsoft YaHei';
+        line-height: 28px;
+        padding-top: 10px;
+        text-align: center;
+    }
+ 
+    #div_right {
+        width: 100%;
+        /*height:240px;*/
+        padding-top: 39px;
+        /*padding-left: 10px;*/
+        background-color: white;
+    }
+ 
+    /**/
+    .div_Date {
+        font-size: 14px;
+        color: #657181;
+    }
+ 
+    .div_Vaule {
+        font-size: 14px;
+        color: darkgrey;
+    }
+ 
+    /*背景图片*/
+    .layui-fluid {
+        /*background-image:url(../../src/img/home_bg.png);*/
+        background: url(../../src/img/home_bg.png) no-repeat;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+    }
+ 
+    /*返回箭头*/
+    .backimg {
+        position: fixed;
+        left: 0;
+        margin-left: 16px;
+        width: 15px;
+    }
+ 
+    /*标题*/
+    #title {
+        /*width: 250px;
+                height: 47px;*/
+        font-family: AdobeHeitiStd-Regular;
+        font-size: 20px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: -1px;
+        margin: 5% auto;
+        color: #ffffff;
+        text-align: center;
+    }
+ 
+    #menu {
+        position: fixed;
+        width: 100%;
+        height: 5%;
+        bottom: 0;
+        border: 1px solid #ff0000;
+    }
+ 
+    /*日历样式*/
+    .layui-laydate, .layui-laydate-hint {
+        border: 1px solid #d2d2d2;
+        box-shadow: 0 2px 4px rgba(0,0,0,.12);
+        background-color: #fff;
+        color: #666;
+        top: 20px;
+        /*bottom:40px;*/
+        left: 10%;
+        width: 80%;
+    }
+ 
+    /*颜色条*/
+    .sign {
+        margin: 0 10%;
+    }
+    /*bg1~bg6*/
+    .bg1, .bg2, .bg3, .bg4, .bg5, .bg6 {
+        color: #fff !important;
+        border-radius: 8px !important;
+        margin: 1px;
+    }
+    .bg1 {
+        background-color: #63ea3b !important;      
+    }
+ 
+    .bg2 {
+        background-color: #ffad37 !important;        
+    }
+ 
+    .bg3 {
+        background-color: #ff8837 !important;       
+    }
+ 
+    .bg4 {
+        background-color: #ff4f4f !important;       
+    }
+ 
+    .bg5 {
+        background-color: #e142f7 !important;      
+    }
+ 
+    .bg6 {
+        background-color: #ac1ef6 !important;      
+    }
+ 
+    /*日期按钮默认样式*/
+    .layui-laydate .layui-this {
+        background-color: #ffad37 !important;
+        color: #fff !important;
+    }
+ 
+ 
+ 
+ 
+    /*AQI显示*/
+    .aqidata {
+        left: 10%;
+        width: 80%;
+        top: 20px;
+        bottom: 100px;
+    }
+ 
+ 
+    ul.layui-nav li {
+        float: left;
+    }
+ 
+    layui-nav-item a {
+        color: red;
+    }
+ 
+    /*.test {
+        border-radius: 8px !important;
+        background-color: #63ea3b !important;
+        color: #fff !important;
+        padding: 1px;
+    }*/
+</style>
+ 
+ 
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-xs12" id="title">
+            <span><img class="backimg" src="../../src/img/back.png" /></span>
+            <span>空气质量</span>
+        </div>
+        <div class="layui-col-xs12">
+            <div id="air-calendar-laydate"></div>
+        </div>
+        <div class="layui-col-xs12">
+            <div class="layui-row layui-col-space10 sign" style="background-color:whitesmoke;padding-left: 10px;padding-right: 10px; ">
+                <!-- <div class="layui-col-xs2" style="height:5px"></div>-->
+                <div class="layui-col-xs10">
+                    <div class="layui-col-xs2" style="height:5px">0</div>
+                    <div class="layui-col-xs2" style="height:5px">50</div>
+                    <div class="layui-col-xs2" style="height:5px">100</div>
+                    <div class="layui-col-xs2" style="height:5px">150</div>
+                    <div class="layui-col-xs2" style="height:5px">200</div>
+                    <div class="layui-col-xs2" style="height:5px">300</div>
+                </div>
+                <!--<div class="layui-col-xs2" style="height:6px"><hr style="height:2px"></div>-->
+                <div class="layui-col-xs10">
+                    <div class="layui-col-xs2" style="height:5px"><hr class="bg1" style="height:2px"></div>
+                    <div class="layui-col-xs2" style="height:5px"><hr class="bg2" style="height:2px"></div>
+                    <div class="layui-col-xs2" style="height:5px"><hr class="bg3" style="height:2px"></div>
+                    <div class="layui-col-xs2" style="height:5px"><hr class="bg4" style="height:2px"></div>
+                    <div class="layui-col-xs2" style="height:5px"><hr class="bg5" style="height:2px"></div>
+                    <div class="layui-col-xs2" style="height:5px"><hr class="bg6" style="height:2px"></div>
+                </div>
+                <!--<div class="layui-col-xs2" style="height:10px">无数据</div>-->
+                <div class="layui-col-xs10">
+                    <div class="layui-col-xs2" style="height:10px">优</div>
+                    <div class="layui-col-xs2">良</div>
+                    <div class="layui-col-xs2">轻度</div>
+                    <div class="layui-col-xs2">中度</div>
+                    <div class="layui-col-xs2">重度</div>
+                    <div class="layui-col-xs2">严重</div>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="layui-col-xs12 aqidata">
+            <div class="layui-col-xs3">
+                <div id="div_left">
+                    <div class="div_AQI" id="divAQI">AQI&nbsp;<span id="QUALITYLEVEL">-</span></div>
+                    <div class="div_AQIValue" id="divAQIValue">-</div>
+                </div>
+            </div>
+            <div class="layui-col-xs9">
+                <div id="div_right">
+                    <div class="layui-row layui-col-space15">
+                        <div class="layui-col-xs7">
+                            <div id="divAddress">岳麓区&nbsp;欣盛路</div>
+                        </div>
+                        <div class="layui-col-xs5">
+                            <div class="div_Date" id="MEASURETIME">--</div>
+                        </div>
+                        <!--<div class="layui-col-xs12">
+                            <div id="divAQIValue">细颗粒物：PM2.5</div>
+                        </div>-->
+                        <div class="layui-col-xs2">
+                            <div class="div_Date">PM2.5</div>
+                        </div>
+                        <div class="layui-col-xs2">
+                            <div id="PM2_5" class="div_Vaule">-</div>
+                        </div>
+                        <div class="layui-col-xs2">
+                            <div class="div_Date">PM10</div>
+                        </div>
+                        <div class="layui-col-xs2">
+                            <div id="PM10" class="div_Vaule">-</div>
+                        </div>
+                        <div class="layui-col-xs2">
+                            <div class="div_Date">SO2</div>
+                        </div>
+                        <div class="layui-col-xs2">
+                            <div id="SO2" class="div_Vaule">-</div>
+                        </div>
+                        <div class="layui-col-xs2">
+                            <div class="div_Date">NO2</div>
+                        </div>
+                        <div class="layui-col-xs2">
+                            <div id="NO2" class="div_Vaule">-</div>
+                        </div>
+                        <div class="layui-col-xs2">
+                            <div class="div_Date">O3</div>
+                        </div>
+                        <div class="layui-col-xs2">
+                            <div id="O3" class="div_Vaule">-</div>
+                        </div>
+                        <div class="layui-col-xs2">
+                            <div class="div_Date">CO</div>
+                        </div>
+                        <div class="layui-col-xs2">
+                            <div id="CO" class="div_Vaule">-</div>
+                        </div>
+ 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="layui-col-xs12" >
+                <ul class="layui-nav" lay-filter="">
+                    <li class="layui-nav-item"><a href="">站点</a></li>
+                    <li class="layui-nav-item"><a href="">实时数据</a></li>
+                    <li class="layui-nav-item layui-this"><a href="">空气日历</a></li>
+                </ul>
+        </div>-->
+    </div>
+</div>
+ 
+<script>
+ 
+    layui.use(['admin', 'laydate', 'setter'], function () {
+        //var laydate = layui.laydate;
+        var $ = layui.$
+         , setter = layui.setter
+         , admin = layui.admin
+         , element = layui.element
+         , laydate = layui.laydate;
+ 
+        var userinfo = layui.data(setter.tableName, { key: 'userinfo' });
+        //console.log("userinfo:", userinfo);
+ 
+        //直接嵌套显示
+        laydate.render({
+            elem: '#air-calendar-laydate'
+            , position: 'static'
+            , showBottom: false
+            , change: function (value, date) { //监听日期被切换
+                //获取当前选中的年月日
+                var y = value.substr(0, 4);//年
+                var m = value.substr(5, 2);//月
+                var d = value.substr(8, 2);//日
+ 
+                var startDay = new Date(y, m-1, 1);//选中月第一天
+                var lastDay = new Date(y, m, 0);//选中月最后一天
+                ChangeDateColor(startDay, lastDay);
+ 
+                var stime = value + " 00:00:00";
+                var etime = value + " 23:59:59";
+                //查询数据，显示再下方
+                GetAQIData(stime, etime);
+            }
+             , ready: function (date) { //渲染开始
+                 $('.layui-this').removeClass('layui-this');//去掉默认选中当前日期
+                 var startDay = new Date(date.year, date.month-1, 1);
+                 var lastDay = new Date(date.year, date.month, 0);
+                 ChangeDateColor(startDay, lastDay);
+                 
+                 var stime_data = date.year + "-" + date.month + "-" + date.date + " " + "00:00:00";
+                 var etime_data = date.year + "-" + date.month + "-" + date.date + " " + "23:59:59";
+                 GetAQIData(stime_data, stime_data);
+             }
+            , done: function (value, date, endDate) {//控件选择完毕后的回调---点击日期、清空、现在、确定均会触发。
+            }
+        });
+ 
+        var SO2, NO2, PM2_5, PM10, O3, CO, AQI, MEASURETIME, QUALITYLEVEL;
+ 
+        //格林尼治时间转标准时间
+        function GMTToStr(time) {
+            let date = new Date(time)
+            let Str = date.getFullYear() + '-' +
+            (date.getMonth() + 1) + '-' +
+            date.getDate()
+            //+ ' ' +
+            //date.getHours() + ':' +
+            //date.getMinutes() + ':' +
+            //date.getSeconds()
+            return Str
+        }
+ 
+        //返回每天的数据的颜色
+        function ReturnDayToColor(stime, etime) {
+            var ReturnJson = "[";
+            var aqidata = { sTime: stime, eTime: etime, Type: "Day", UserID: userinfo.ID, UserName: userinfo.FULLNAME }; //正式时Type改为Day
+            $.ajax({
+                url: "./aqidata/GetMDataAQIData",
+                type: "POST",
+                contentType: 'application/json',
+                async: false,
+                data: JSON.stringify(aqidata),
+                success: function (res) {
+                    var color = "COLOURCODE";
+                    var time = "MEASURETIME";
+                    var quality = "QUALITYLEVEL";
+                    if (res.code != 0) {
+                        ReturnJson = "null";
+                    }
+                    else {
+                        for (var i = 0; i < res.data.length; i++) {                           
+                            ReturnJson += "{"
+                            ReturnJson += "\"" + time + "\":\"" + res.data[i].MEASURETIME.substr(0, 10) + "\","
+                            ReturnJson += "\"" + quality + "\":\"" + res.data[i].QUALITYLEVEL + "\","
+                            ReturnJson += "\"" + color + "\":\"" + res.data[i].COLOURCODE + "\""
+                            ReturnJson += "},"
+                        }
+                        ReturnJson = ReturnJson.substring(0, ReturnJson.lastIndexOf(','))//去除最后一个逗号
+                        ReturnJson += "]";
+                    }
+                }
+            })
+            return ReturnJson;
+        }
+ 
+ 
+ 
+        //改变日历日期的颜色
+        function ChangeDateColor(sDay,lDay) {
+            var Json_Color = ReturnDayToColor(GMTToStr(sDay), GMTToStr(lDay));//返回的json(时间，颜色编码，空气质量等级)
+            var newjson = eval('' + Json_Color + '');//json对象解析
+            if (newjson != null) {//如果返回的对象不为空
+                for (var i = 0; i < newjson.length; i++) {//遍历数据
+                    switch (newjson[i].QUALITYLEVEL) {//newjson[i].QUALITYLEVEL为空气质量等级
+                        case "优":
+                            $('td[lay-ymd="' + newjson[i].MEASURETIME + '"]').addClass('bg1');
+                            break;
+                        case "良":
+                            $('td[lay-ymd="' + newjson[i].MEASURETIME + '"]').addClass('bg2');
+                            break;
+                        case "轻度":
+                            $('td[lay-ymd="' + newjson[i].MEASURETIME + '"]').addClass('bg3');
+                            break;
+                        case "中度":
+                            $('td[lay-ymd="' + newjson[i].MEASURETIME + '"]').addClass('bg4');
+                            break;
+                        case "重度":
+                            $('td[lay-ymd="' + newjson[i].MEASURETIME + '"]').addClass('bg5');
+                            break;
+                        case "严重":
+                            $('td[lay-ymd="' + newjson[i].MEASURETIME + '"]').addClass('bg6');
+                            break;
+                        default:
+                    }
+                }
+            }
+        }
+ 
+        //获取城市AQI
+        function GetAQIData(stime, etime) {
+            var aqidata = { sTime: stime, eTime: etime, Type: "Day", UserID: userinfo.ID, UserName: userinfo.FULLNAME }; //正式时Type改为Day
+            $.ajax({
+                url: "./aqidata/GetMDataAQIData",
+                type: "POST",
+                contentType: 'application/json',
+                async: false,
+                data: JSON.stringify(aqidata),
+                success: function (res) {
+                    if (res.code != 0) {
+                        document.getElementById("divAQIValue").innerHTML = "-";
+                        document.getElementById("MEASURETIME").innerHTML = "-";
+                        document.getElementById("QUALITYLEVEL").innerHTML = "-";
+                        document.getElementById("SO2").innerHTML = "-";
+                        document.getElementById("NO2").innerHTML = "-";
+                        document.getElementById("PM2_5").innerHTML = "-";
+                        document.getElementById("PM10").innerHTML = "-";
+                        document.getElementById("O3").innerHTML = "-";
+                        document.getElementById("CO").innerHTML = "-";
+                        document.getElementById("div_left").style.backgroundColor = "#63ea3b";//无数据时
+                    }
+                    else {
+                        SO2 = res.data[0].SO2;
+                        NO2 = res.data[0].NO2;
+                        PM2_5 = res.data[0].PM2_5;
+                        PM10 = res.data[0].PM10;
+                        O3 = res.data[0].O3;
+                        CO = res.data[0].CO;
+                        AQI = res.data[0].AQI;
+                        MEASURETIME = res.data[0].MEASURETIME;
+                        QUALITYLEVEL = res.data[0].QUALITYLEVEL;
+ 
+                        //根据AQI的等级控制显示颜色
+                        if (QUALITYLEVEL == "优")
+                            document.getElementById("div_left").style.backgroundColor = "#63ea3b";
+                        if (QUALITYLEVEL == "良")
+                            document.getElementById("div_left").style.backgroundColor = "#ffad37";
+                        if (QUALITYLEVEL == "轻度")
+                            document.getElementById("div_left").style.backgroundColor = "#ff8837";
+                        if (QUALITYLEVEL == "中度")
+                            document.getElementById("div_left").style.backgroundColor = "#ff4f4f";
+                        if (QUALITYLEVEL == "重度")
+                            document.getElementById("div_left").style.backgroundColor = "#e142f7";
+                        if (QUALITYLEVEL == "严重")
+                            document.getElementById("div_left").style.backgroundColor = "#ac1ef6";
+ 
+                        document.getElementById("divAQIValue").innerHTML = AQI;
+                        document.getElementById("MEASURETIME").innerHTML = MEASURETIME.substr(0, 10);
+                        document.getElementById("QUALITYLEVEL").innerHTML = QUALITYLEVEL;
+                        document.getElementById("SO2").innerHTML = SO2;
+                        document.getElementById("NO2").innerHTML = NO2;
+                        document.getElementById("PM2_5").innerHTML = PM2_5;
+                        document.getElementById("PM10").innerHTML = PM10;
+                        document.getElementById("O3").innerHTML = O3;
+                        document.getElementById("CO").innerHTML = CO;
+ 
+                    }
+                },
+                error: function (err) {
+                    console.log("err!");
+                }
+            });
+        }
+ 
+    });
+ 
+</script>

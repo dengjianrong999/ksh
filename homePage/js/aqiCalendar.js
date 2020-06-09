@@ -26,8 +26,6 @@
 		d = (d.toString())[1] ? d : '0'+d;
 		return y+'年'+m+'月'
 	}
-
-
 	function getCssByAqi(aqi){
 		var aqi_int = parseInt(aqi);
 		if (aqi_int<=50) return 1;
@@ -125,13 +123,13 @@
 						var nowDate = formartDate(year,month+1,(i+1-startWeek),'-');
 						var addClass = '';
 						selectedDate == nowDate && (addClass = 'selected-style');
-						//formartDate(currentYear,currentMonth+1,currentDay,'-') == nowDate && (addClass = 'today-flag');
+						formartDate(currentYear,currentMonth+1,currentDay,'-') == nowDate && (addClass = 'today-flag');
 						var d = i+1-startWeek;
 						d = (d.toString())[1] ? d : '0'+d;
 						rq="aqi"+d;
 						//var aqi = aqi_json.aqi[rq].aqi;
 						var aqi = 30;
-						//var jb = getCssByAqi(aqi);
+						var jb = getCssByAqi(aqi);
 						var jb=1;
 						formartDate(currentYear,currentMonth+1,currentDay,'-') >= nowDate && (addClass = ' aqi-flag'+jb);
 						var titles = "AQI:80&#13;PM2.5:--&#13;";
