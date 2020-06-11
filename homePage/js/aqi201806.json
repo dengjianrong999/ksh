@@ -1,159 +1,159 @@
 {
 	"aqi": {
 		"aqi01": {
-			"aqi": "30",
-			"primary": "81",
-			"quality ": "се"
+			"aqi": "3000",
+			"primary": "101",
+			"quality ": "О©╫О©╫"
 		},
 		"aqi02": {
-			"aqi": "30",
-			"primary": "81",
-			"quality ": "се"
+			"aqi": "150",
+			"primary": "301",
+			"quality ": "О©╫О©╫"
 		},
 		"aqi03": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi04": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi05": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi06": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi07": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi08": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi09": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi10": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi11": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi12": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi13": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi14": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi15": {
 			"aqi": "29",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi16": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi17": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi18": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi19": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi20": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi21": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi22": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi23": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi24": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi25": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi26": {
 			"aqi": "100",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi27": {
 			"aqi": "81",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi28": {
-			"aqi": "29",
+			"aqi": "89",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi29": {
-			"aqi": "24",
+			"aqi": "240",
 			"primary": "PM10",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi30": {
-			"aqi": "24",
+			"aqi": "104",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		},
 		"aqi31": {
-			"aqi": "100",
+			"aqi": "850",
 			"primary": "81",
-			"quality ": "се"
+			"quality ": "О©╫О©╫"
 		}
 	}
 }

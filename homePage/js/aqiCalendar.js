@@ -26,6 +26,8 @@
 		d = (d.toString())[1] ? d : '0'+d;
 		return y+'年'+m+'月'
 	}
+
+
 	function getCssByAqi(aqi){
 		var aqi_int = parseInt(aqi);
 		if (aqi_int<=50) return 1;
@@ -102,12 +104,12 @@
 			render();
 		}
 		var render = function () {
-			//$.getJSON("js/aqi201806.json",function(data){
+			$.getJSON("js/aqi201806.json",function(data){
 				//console.log(data.aqi.aqi01.aqi);
 				//console.log(data.aqi[0].aqi01[0].aqi);
 				var rq="aqi"+"01";
 				//console.log(data.aqi[rq].aqi);
-				//var aqi_json = data;
+				var aqi_json = data;
 			
 
 				var fullDay = new Date(year,month+1,0).getDate(), //当月总天数
@@ -123,14 +125,14 @@
 						var nowDate = formartDate(year,month+1,(i+1-startWeek),'-');
 						var addClass = '';
 						selectedDate == nowDate && (addClass = 'selected-style');
-						formartDate(currentYear,currentMonth+1,currentDay,'-') == nowDate && (addClass = 'today-flag');
+						//formartDate(currentYear,currentMonth+1,currentDay,'-') == nowDate && (addClass = 'today-flag');
 						var d = i+1-startWeek;
 						d = (d.toString())[1] ? d : '0'+d;
 						rq="aqi"+d;
-						//var aqi = aqi_json.aqi[rq].aqi;
-						var aqi = 30;
+						var aqi = aqi_json.aqi[rq].aqi;
+						// var aqi = 30;
 						var jb = getCssByAqi(aqi);
-						var jb=1;
+						// var jb=1;
 						formartDate(currentYear,currentMonth+1,currentDay,'-') >= nowDate && (addClass = ' aqi-flag'+jb);
 						var titles = "AQI:80&#13;PM2.5:--&#13;";
 						eleTemp.push('<li class="current-month" ><span title='+titles+' class="currentDate dayStyle '+addClass+ ' ">'+(i+1-startWeek)+'</span></li>')
@@ -143,7 +145,7 @@
 				//el.querySelector('.today').innerHTML = formartDate(year,month+1,day,'-');
 				el.querySelector('.today').innerHTML = formartDate2(year,month+1,day);
 				
-			//});
+			});
 		};
 		this.nextMonthFun = function () {
 			if(month+1 > 11){

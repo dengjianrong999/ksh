@@ -1,0 +1,129 @@
+HTML Result
+EDIT ON
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+     <!-- 引入样式 -->
+    <link rel="stylesheet" href="css/element-ui.css">
+</head>
+<style>
+    .el-calendar-table thead th{
+        color: #333;
+        background-color: #fff;
+        border: 1px solid #efefef;
+    }
+    .el-calendar{
+        background-color: #333;
+    }
+    .li-00{
+        background:rgb(0,228,0)!important;
+        color: #000;
+    }
+    .li-01{
+        background:rgb(255,255,0)!important;
+        color: #000;
+    }
+    .li-02{
+        background:rgb(255,126,0)!important;
+        color: #000;
+    }
+    .li-03{
+        background:rgb(255,0,0)!important;
+        color: #000;
+    }
+    .li-04{
+        background:rgb(153,0,76)!important;
+        color: #000;
+    }
+    .li-05{
+        background:rgb(126,0,35)!important;
+        color: #000;
+    }
+    .is-selected {
+    color: #1989FA;
+  }
+  .el-calendar-table .el-calendar-day{
+      padding: 0;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+  }
+</style>
+
+<body>
+    <div id="app">
+        AQI   日历
+        <el-calendar>
+            <!-- 这里使用的是 2.5 slot 语法，对于新项目请使用 2.6 slot 语法-->
+            <template slot="dateCell" slot-scope="{date, data}">
+                <p :class="data.isSelected ? 'is-selected' : ''">
+                <div style="position: relative;width: 100%;height: 100%;top: 0;left: 0;">
+                    {{data.day.split('-').slice(2)[0]}}
+                    <template v-for="item in calendarData">
+                        <template v-if="data.day.split('-').slice(1)[0]==item.months">
+                            <div v-if="(item.days).indexOf(data.day.split('-').slice(2).join('-'))!=-1 && item.type!=-1" 
+                            :class="'li-0'+item.type" style="width: 100%; height: 100%; position: absolute;top: 0;left: 0;">
+                                    {{data.day.split('-').slice(2)[0]}}
+                            </div>
+                        </template>
+                    </template>
+                </div>
+                </p>
+            </template>
+        </el-calendar>
+    </div>
+</body>
+<!-- import Vue before Element -->
+<script src="js/vue.js-v2.6.11.js"></script>
+<!-- import JavaScript -->
+<script src="js/element-ui.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: function () {
+            return { 
+                calendarData:[
+                    {months:['06'],days:['01'],type:0},
+                    {months:['06'],days:['02'],type:3},
+                    {months:['06'],days:['03'],type:4},
+                    {months:['06'],days:['04'],type:5},
+                    {months:['06'],days:['05'],type:1},
+                    {months:['06'],days:['05'],type:1},
+                    {months:['06'],days:['06'],type:1},
+                    {months:['06'],days:['07'],type:1},
+                    {months:['06'],days:['08'],type:1},
+                    {months:['06'],days:['09'],type:1},
+                    {months:['06'],days:['10'],type:1},
+                    {months:['06'],days:['11'],type:2},
+                    {months:['06'],days:['12'],type:0},
+                    {months:['06'],days:['13'],type:3},
+                    {months:['06'],days:['14'],type:4},
+                    {months:['06'],days:['15'],type:5},
+                    {months:['06'],days:['16'],type:1},
+                    {months:['06'],days:['17'],type:0},
+                    {months:['06'],days:['18'],type:1},
+                    {months:['06'],days:['19'],type:4},
+                    {months:['06'],days:['20'],type:1},
+                    {months:['06'],days:['21'],type:5},
+                    {months:['06'],days:['22'],type:1},
+                    {months:['06'],days:['23'],type:1},
+                    {months:['06'],days:['24'],type:2},
+                    {months:['06'],days:['25'],type:1},
+                    {months:['06'],days:['26'],type:3},
+                    {months:['06'],days:['27'],type:1},
+                    {months:['06'],days:['28'],type:1},
+                    {months:['06'],days:['29'],type:4},
+                    {months:['06'],days:['30'],type:1},
+                ]
+            
+            
+            }
+        }
+    })
+</script>
+
+</html>
+
+
